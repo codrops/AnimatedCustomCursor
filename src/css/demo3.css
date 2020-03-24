@@ -218,6 +218,7 @@ a:focus {
 		left: 0;
 		display: block;
 		pointer-events: none;
+		opacity: 0;
 	}
 	.cursor__inner {
 		fill: var(--cursor-fill);
