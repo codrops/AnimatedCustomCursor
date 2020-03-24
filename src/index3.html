@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Animated Custom Cursor Effect | Demo 3 | Codrops</title>
+		<meta name="description" content="Some SVG filter effects for custom mouse cursors." />
+		<meta name="keywords" content="svg filter, custom cursor, distortion, animation, effect, interactive, web, frontend" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" href="https://use.typekit.net/gdg8keg.css">
+		<link rel="stylesheet" type="text/css" href="css/demo3.css" />
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+	</head>
+	<body>
+		<main>
+			<div class="frame">
+				<h1 class="frame__title">Animated Custom Cursor Effect</h1>
+				<div class="frame__links">
+					<a href="https://tympanus.net/codrops/?p=48725">Article</a>
+					<a href="https://github.com/codrops/AnimatedCustomCursor/">GitHub</a>
+				</div>
+				<h3 class="frame__initials">C</h3>
+				<div class="frame__demos">
+					<a href="index.html">1</a>
+					<a href="index2.html">2</a>
+					<span>3</span>
+					<a href="index4.html">4</a>
+				</div>
+			</div>
+			<div class="content">
+				<p>Hi, my name is Eddie and I am a <a>pragmatic</a> UI designer who has worked with dozens of <a>businesses</a> and some <a>non-profit</a> organizations. If you'd like me to help you with your next UI project, <a>let's talk</a>!</p>
+			</div>
+		</main>
+		<svg class="cursor" width="280" height="280" viewBox="0 0 280 280">
+			<defs>
+				<filter id="filter-1" x="-50%" y="-50%" width="200%" height="200%" 
+				filterUnits="objectBoundingBox">
+					<feTurbulence type="fractalNoise" baseFrequency="0.02 0.15" numOctaves="3" result="warp" />
+					<feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="0" in="SourceGraphic" in2="warp" />
+				</filter>
+			</defs>
+			<circle class="cursor__inner" cx="140" cy="140" r="50"/>
+		</svg>
+		<script src="js/index3.js"></script>
+	</body>
+</html>
