@@ -10,27 +10,21 @@
 
 body {
 	margin: 0;
-	--color-text: #d03428;
-    --color-bg: #000;
-    --font-alt: messapiabold, sans-serif;
-    --color-link: #e4d6b6;
-    --color-link-hover: #d03428;
-    --color-menu-link: #e4d6b6;
-    --color-menu-link-hover: #d03428;
+	--color-text: #c3654e;
+	--color-bg: #f2e9e0;
+	--color-link: #000;
+	--color-link-hover: #040203;
 	--color-content: #040203;
+	--font-alt: freight-display-pro, serif;
 	color: var(--color-text);
 	background-color: var(--color-bg);
 	font-family: soleil, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-image: url(2.cec8c082.jpg);
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: auto 60vh;
 	/* Cursor styles */
-    --cursor-stroke: #e4d6b6;
-    --cursor-fill: none;
-    --cursor-stroke-width: 1px;  
+	--cursor-stroke: #c3654e;
+	--cursor-fill: none;
+	--cursor-stroke-width: 1px;
 }
 
 a {
@@ -44,13 +38,6 @@ a:hover,
 a:focus {
 	color: var(--color-link-hover);
 	outline: none;
-}
-
-.message {
-	background: var(--color-text);
-	color: var(--color-bg);
-	padding: 1rem;
-	text-align: center;
 }
 
 .frame {
@@ -225,6 +212,7 @@ a:focus {
 		left: 0;
 		display: block;
 		pointer-events: none;
+		opacity: 0;
 	}
 	.cursor__inner {
 		fill: var(--cursor-fill);
