@@ -25,4 +25,7 @@ const getMousePos = (e) => {
     return { x : posx, y : posy }
 };
 
-export { map, lerp, calcWinsize, getMousePos };
+export { map, lerp, calcWinsize, getMousePos };const getPageYScroll = () =>
+  window.pageYOffset || document.documentElement.scrollTop;
+
+export { map, lerp, calcWinsize, getMousePos, getPageYScroll };
