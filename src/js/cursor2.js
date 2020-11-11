@@ -51,6 +51,14 @@ export default class Cursor extends EventEmitter {
             window.removeEventListener('mousemove', this.onMouseMoveEv);
         };
         window.addEventListener('mousemove', this.onMouseMoveEv);
+
+        this.isVisible = true;
+
+        this.hide = this.hide.bind(this);
+        this.show = this.show.bind(this);
+
+        document.body.addEventListener('mouseleave', this.hide);
+        document.body.addEventListener('mouseenter', this.show);
     }
     render() {
         this.renderedStyles['tx'].current = mouse.x - this.bounds.width/2;
@@ -64,7 +72,7 @@ export default class Cursor extends EventEmitter {
         this.DOM.circleInner.setAttribute('r', this.renderedStyles['radius'].previous);
         this.DOM.circleInner.style.strokeWidth = `${this.renderedStyles['stroke'].previous}px`;
 
-        requestAnimationFrame(() => this.render());
+        if (this.isVisible) requestAnimationFrame(() => this.render());
     }
     createTimeline() {
         // init timeline
@@ -96,6 +104,17 @@ export default class Cursor extends EventEmitter {
         this.renderedStyles['radius'].current = 60;
         this.renderedStyles['stroke'].current = 1;
         this.tl.progress(1).kill();
+    }
+    show() {
+        this.isVisible = true;
+        requestAnimationFrame(() => this.render());
+        gsap.to(this.DOM.el, {duration: 0.9, ease: 'Power3.easeOut', opacity: 1});
+    }
+    hide(ev) {
+        if (!ev.relatedTarget && !ev.toElement) {
+            this.isVisible = false;
+            gsap.to(this.DOM.el, {duration: 0.9, ease: 'Power3.easeOut', opacity: 0});
+        }
     }
     listen() {
         this.on('enter', () => this.enter());
