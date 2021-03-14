@@ -1,17 +1,11 @@
 import { gsap } from 'gsap';
-import { map, lerp, calcWinsize, getMousePos, getPageYScroll } from './utils';
+import { map, lerp, calcWinsize, getMousePos } from './utils';
 import { EventEmitter } from 'events';
 
 // Calculate the viewport size
 let winsize = calcWinsize();
 window.addEventListener('resize', () => {
     winsize = calcWinsize();
-});
-
-// Get the scroll Y position
-let docYScroll = getPageYScroll();
-window.addEventListener("scroll", () => {
-    docYScroll = getPageYScroll();
 });
 
 // Track the mouse position
@@ -45,7 +39,7 @@ export default class Cursor extends EventEmitter {
 
         this.onMouseMoveEv = () => {
             this.renderedStyles.tx.previous = this.renderedStyles.tx.current = mouse.x - this.bounds.width/2;
-            this.renderedStyles.ty.previous = this.renderedStyles.ty.previous = mouse.y - this.bounds.height/2 - docYScroll;
+            this.renderedStyles.ty.previous = this.renderedStyles.ty.current = mouse.y - this.bounds.height/2;
             gsap.to(this.DOM.el, {duration: 0.9, ease: 'Power3.easeOut', opacity: 1});
             requestAnimationFrame(() => this.render());
             window.removeEventListener('mousemove', this.onMouseMoveEv);
@@ -54,7 +48,7 @@ export default class Cursor extends EventEmitter {
     }
     render() {
         this.renderedStyles['tx'].current = mouse.x - this.bounds.width/2;
-        this.renderedStyles['ty'].current = mouse.y - this.bounds.height/2 - docYScroll;
+        this.renderedStyles['ty'].current = mouse.y - this.bounds.height/2;
 
         for (const key in this.renderedStyles ) {
             this.renderedStyles[key].previous = lerp(this.renderedStyles[key].previous, this.renderedStyles[key].current, this.renderedStyles[key].amt);

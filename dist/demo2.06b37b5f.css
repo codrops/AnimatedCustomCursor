@@ -18,7 +18,7 @@ body {
 	--font-alt: messapiabold, sans-serif;
 	--color-menu-link: #e4d6b6;
 	--color-menu-link-hover: #382d11;
-	background-image: url(1.b222494f.jpg);
+	background-image: url(/1.dc197a9a.jpg);
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	background-size: auto 60vh;
@@ -226,3 +226,6 @@ a:focus {
 		stroke-width: var(--cursor-stroke-width);
 	}
 }
+
+
+/*# sourceMappingURL=/demo2.06b37b5f.css.map */

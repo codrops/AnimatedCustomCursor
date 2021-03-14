@@ -10,11 +10,11 @@
 
 body {
 	margin: 0;
-	--color-text: #c3654e;
-	--color-bg: #f2e9e0;
-	--color-link: #000;
-	--color-link-hover: #040203;
-	--color-content: #040203;
+	--color-text: #ffffff;
+    --color-bg: #0e0e0e;
+    --color-link: #d20d4c;
+    --color-link-hover: #ffffff;
+    --color-content: #4e4e4e;
 	--font-alt: freight-display-pro, serif;
 	color: var(--color-text);
 	background-color: var(--color-bg);
@@ -22,9 +22,9 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	/* Cursor styles */
-	--cursor-stroke: #c3654e;
-	--cursor-fill: none;
-	--cursor-stroke-width: 1px;
+    --cursor-stroke: #ffffff;
+    --cursor-fill: none;
+    --cursor-stroke-width: 1px;
 }
 
 a {
@@ -38,6 +38,13 @@ a:hover,
 a:focus {
 	color: var(--color-link-hover);
 	outline: none;
+}
+
+.message {
+	background: var(--color-text);
+	color: var(--color-bg);
+	padding: 1rem;
+	text-align: center;
 }
 
 .frame {
@@ -91,8 +98,8 @@ a:focus {
 
 .content p {
 	max-width: 80vw;
-	font-size: 4vw;
-	text-transform: uppercase;
+	font-size: 4.5vw;
+	text-transform: none;
 	color: var(--color-content);
 	font-family: var(--font-alt);
 	font-weight: 300;
@@ -100,7 +107,6 @@ a:focus {
 }
 
 .content p a {
-	font-weight: 600;
 	font-style: italic;
 	position: relative;
 }
@@ -220,3 +226,6 @@ a:focus {
 		stroke-width: var(--cursor-stroke-width);
 	}
 }
+
+
+/*# sourceMappingURL=/demo3.f904c581.css.map */
